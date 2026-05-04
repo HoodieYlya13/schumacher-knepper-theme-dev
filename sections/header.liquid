@@ -216,7 +216,7 @@
     transition: padding 0.4s cubic-bezier(0.23, 1, 0.32, 1), min-height 0.4s cubic-bezier(0.23, 1, 0.32, 1), height 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
   }
 
-  .header-wrapper:has(details[open]) {
+  .header-wrapper:has(.header__search details[open]) {
     max-width: 60rem !important; 
     width: calc(100% - 4rem) !important; 
     background: transparent !important;
@@ -224,11 +224,15 @@
     box-shadow: none !important;
   }
 
-  .header-wrapper:has(details[open]) .header {
+  .header-wrapper:has(.header__search details[open]) .header {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     min-height: 60px !important; 
     height: 60px !important; 
+  }
+
+  .header-wrapper:has(header-drawer details[open]) {
+    background: rgba(var(--color-background), 0.85) !important; 
   }
 
   .search-modal__content .field__button,
@@ -301,6 +305,13 @@
     }
     .search-modal {
       border-radius: 50px;
+    }
+
+    #MainContent:has(> .shopify-section:first-child .banner) .banner__content,
+    #MainContent:has(> .shopify-section:first-child .slideshow) .banner__content,
+    #MainContent:has(> .shopify-section:first-child .collection-hero) .collection-hero__inner,
+    #MainContent:has(> .shopify-section:first-child .video-section) .video-section {
+      padding-top: calc(var(--header-height, 100px) + 2rem);
     }
   }
 
