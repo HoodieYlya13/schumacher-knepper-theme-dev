@@ -113,7 +113,7 @@
           "type": "button",
           "settings": {
             "button_label": "Read the Full Story",
-            "button_link": "shopify://blogs/news",
+            "button_link": "shopify://pages/our-story",
             "button_style_secondary": true,
             "button_label_2": "",
             "button_link_2": "",
