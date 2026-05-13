@@ -39,7 +39,8 @@ cart-items .title-wrapper-with-link {
 }
 
 .cart-item__image-container.global-media-settings img {
-  border-radius: calc(var(--media-radius) - var(--media-border-width)) !important;
+  border-radius: var(--media-radius) !important;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.08));
 }
 
 .cart-item__nested-line .cart-item__image-container {

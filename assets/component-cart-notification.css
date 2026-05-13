@@ -118,7 +118,8 @@
 }
 
 .cart-notification-product__image.global-media-settings img {
-  border-radius: calc(var(--media-radius) - var(--media-border-width)) !important;
+  border-radius: var(--media-radius) !important;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.08));
 }
 
 .cart-notification-product__image:after {
