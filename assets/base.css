@@ -1978,14 +1978,14 @@ input[type='checkbox'] {
   transform: scale(0.9);
 }
 
-.quantity__button:first-child {
+.quantity__button[name='minus'] {
   margin-left: 0;
-  border-right: 1px solid rgba(var(--color-foreground), 0.05);
+  border-right: 1px solid rgba(var(--color-foreground), 0.08);
 }
 
-.quantity__button:last-child {
+.quantity__button[name='plus'] {
   margin-right: 0;
-  border-left: 1px solid rgba(var(--color-foreground), 0.05);
+  border-left: 1px solid rgba(var(--color-foreground), 0.08);
 }
 
 .quantity__button .svg-wrapper {
