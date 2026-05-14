@@ -1,6 +1,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
+
 <style>
   .collection-list-section {
     padding-top: 4rem;
@@ -19,7 +20,7 @@
 
   /* Luxury Card Styles */
   .collection-list__item .card {
-    border-radius: 32px !important;
+    border-radius: var(--image-radius, 32px) !important;
     overflow: hidden !important;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
     border: 1px solid rgba(var(--color-foreground), 0.03) !important;
@@ -33,10 +34,11 @@
   }
 
   .collection-list__item .card__inner {
-    border-radius: 32px !important;
+    border-radius: var(--image-radius, 32px) !important;
     overflow: hidden !important;
     position: relative !important;
   }
+
 
   /* If it's a text-only card (like Home Page), ensure it has a background */
   .collection-list__item .card--text .card__inner {
@@ -164,7 +166,7 @@
   }
 </style>
 
-<div class="page-width collection-list-section">
+<div class="page-width collection-list-section" style="--image-radius: {{ section.settings.image_corner_radius }}px;">
   <h1 class="collection-list-title inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {{ section.settings.title }}
   </h1>
@@ -287,10 +289,24 @@
         {
           "value": "square",
           "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape (3:2)"
         }
       ],
       "default": "adapt",
       "label": "t:sections.main-list-collections.settings.image_ratio.label"
+    },
+    {
+      "type": "range",
+      "id": "image_corner_radius",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Image corner radius",
+      "default": 32
     },
     {
       "type": "range",
