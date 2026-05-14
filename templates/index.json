@@ -35,11 +35,11 @@
           "settings": {
             "image": "shopify://shop_images/17-07_Drohn-Musel_029.jpg",
             "image_overlay_opacity": 40,
-            "heading": "Three Centuries of Moselle Mastery.",
+            "heading": "Three Centuries of Moselle Mastery",
             "heading_size": "h0",
             "subheading": "Cultivating the treasured hillsides of Wintrange since 1714. Discover Domaine Viticole Schumacher-Knepper—where an enduring family legacy meets the modern art of Luxembourgish winemaking.",
             "button_label": "Discover Our Heritage",
-            "link": "shopify://blogs/news",
+            "link": "shopify://pages/our-story",
             "button_style_secondary": false,
             "show_text_box": false,
             "box_align": "middle-center",
