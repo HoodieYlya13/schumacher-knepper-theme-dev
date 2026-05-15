@@ -96,7 +96,6 @@
   font-weight: 400 !important;
   letter-spacing: 0.15rem !important;
   margin-bottom: 1.5rem !important;
-  text-transform: uppercase !important;
 }
 
 @media screen and (min-width: 750px) {
@@ -226,7 +225,6 @@
   font-family: var(--font-body-family) !important;
   font-size: 1.4rem !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   letter-spacing: 0.1rem !important;
   cursor: pointer !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;

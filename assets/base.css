@@ -3813,9 +3813,9 @@ details-disclosure > details {
 }
 
 /* Decline Button */
-#shopify-pc__banner__btn-decline {
+#shopify-pc__banner #shopify-pc__banner__btn-decline {
   background: transparent !important;
-  border: 1px solid rgba(var(--color-foreground), 0.2) !important;
+  border: 1.5px solid rgba(var(--color-foreground), 0.2) !important;
   color: rgb(var(--color-foreground)) !important;
   order: 2 !important;
   min-width: 100px !important;
