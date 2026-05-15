@@ -3755,6 +3755,23 @@ details-disclosure > details {
 }
 
 /* --- Shopify Privacy Banner (Liquid Glass Style) --- */
+
+/* Lock scroll when Privacy Center prefs is open */
+html:has(#shopify-pc__prefs[style*="display: block"]),
+html:has(#shopify-pc__prefs[style*="display:block"]) {
+  overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+}
+
+body:has(#shopify-pc__prefs[style*="display: block"]),
+body:has(#shopify-pc__prefs[style*="display:block"]) {
+  overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  touch-action: none;
+}
+
 #shopify-pc__banner {
   position: fixed !important;
   bottom: 2.5rem !important;
@@ -3916,6 +3933,7 @@ details-disclosure > details {
   width: calc(100% - 4rem) !important;
   max-width: 600px !important;
   max-height: 85vh !important;
+  max-height: 85dvh !important;
   background: rgba(var(--color-background), 0.7) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
@@ -4023,6 +4041,7 @@ details-disclosure > details {
   padding: 2rem 3rem 3rem !important;
   overflow-y: auto !important;
   flex-grow: 1 !important;
+  touch-action: auto !important;
 }
 
 .shopify-pc__prefs__intro h3 {
@@ -4138,6 +4157,7 @@ details-disclosure > details {
   #shopify-pc__prefs__dialog {
     width: calc(100% - 2rem) !important;
     max-height: 92vh !important;
+    max-height: 92dvh !important;
     border-radius: 24px !important;
   }
 
