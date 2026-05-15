@@ -123,8 +123,16 @@
 .gm_age_privacy_policy_text p {
   color: rgba(var(--color-foreground), 0.5) !important;
   font-size: 1.2rem !important;
-  margin-top: 2rem !important;
+  margin: 0 !important;
   line-height: 1.4 !important;
+}
+
+.gm_age_privacy_policy_text p:first-child {
+  margin-top: 4rem !important;
+}
+
+.gm_age_privacy_policy_text p:not(:first-child) {
+  margin-top: 0.5rem !important;
 }
 
 #gm_age_error_age {
