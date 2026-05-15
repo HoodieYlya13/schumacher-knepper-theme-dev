@@ -37,6 +37,36 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+    .product__details-grid-title {
+      margin-top: 2.5rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .product__details-grid-row {
+      margin: 0 !important;
+      display: flex;
+      padding: 1.5rem 0;
+      border-top: 0.1rem solid rgba(var(--color-foreground), 0.1);
+      border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.1);
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .product__details-grid-row + .product__details-grid-row {
+      border-top: none;
+    }
+
+    .product__details-grid-key {
+      width: 35%;
+      flex-shrink: 0;
+      color: rgba(var(--color-foreground), 0.7);
+      font-weight: 600;
+    }
+
+    .product__details-grid-value p {
+      margin: 0;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -675,6 +705,19 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'grid_title' -%}
+                <h3 class="product__details-grid-title h4" {{ block.shopify_attributes }}>
+                  {{ block.settings.title | escape }}
+                </h3>
+              {%- when 'grid_row' -%}
+                <div class="product__details-grid-row" {{ block.shopify_attributes }}>
+                  <div class="product__details-grid-key caption-with-letter-spacing">
+                    {{ block.settings.key | escape }}
+                  </div>
+                  <div class="product__details-grid-value rte">
+                    {{ block.settings.value }}
+                  </div>
+                </div>
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2085,6 +2128,35 @@
           "default": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.default",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
+        }
+      ]
+    },
+    {
+      "type": "grid_title",
+      "name": "Grid Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Details",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "grid_row",
+      "name": "Grid Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "key",
+          "label": "Key",
+          "default": "Label"
+        },
+        {
+          "type": "richtext",
+          "id": "value",
+          "label": "Value"
         }
       ]
     }
