@@ -3764,8 +3764,6 @@ html:has(#shopify-pc__prefs:not([style*="none"])) {
 
 body:has(#shopify-pc__prefs:not([style*="none"])) {
   overflow: hidden !important;
-  height: 100vh !important;
-  height: 100dvh !important;
   position: relative;
   touch-action: none;
   overscroll-behavior: none !important;
