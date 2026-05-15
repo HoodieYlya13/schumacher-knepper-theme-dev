@@ -3757,19 +3757,22 @@ details-disclosure > details {
 /* --- Shopify Privacy Banner (Liquid Glass Style) --- */
 
 /* Lock scroll when Privacy Center prefs is open */
-html:has(#shopify-pc__prefs[style*="display: block"]),
-html:has(#shopify-pc__prefs[style*="display:block"]) {
+html:has(#shopify-pc__prefs:not([style*="none"])) {
   overflow: hidden !important;
-  height: 100vh !important;
-  height: 100dvh !important;
+  overscroll-behavior: none !important;
 }
 
-body:has(#shopify-pc__prefs[style*="display: block"]),
-body:has(#shopify-pc__prefs[style*="display:block"]) {
+body:has(#shopify-pc__prefs:not([style*="none"])) {
   overflow: hidden !important;
   height: 100vh !important;
   height: 100dvh !important;
+  position: relative;
   touch-action: none;
+  overscroll-behavior: none !important;
+}
+
+#shopify-pc__prefs:not([style*="none"]) {
+  touch-action: none !important;
 }
 
 #shopify-pc__banner {
@@ -3945,6 +3948,7 @@ body:has(#shopify-pc__prefs[style*="display:block"]) {
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
+  touch-action: auto !important;
 }
 
 #shopify-pc__prefs__dialog header {
@@ -4041,7 +4045,9 @@ body:has(#shopify-pc__prefs[style*="display:block"]) {
   padding: 2rem 3rem 3rem !important;
   overflow-y: auto !important;
   flex-grow: 1 !important;
-  touch-action: auto !important;
+  touch-action: pan-y !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 .shopify-pc__prefs__intro h3 {
@@ -4188,9 +4194,11 @@ body:has(#shopify-pc__prefs[style*="display:block"]) {
 }
 
 /* Privacy Center Overlay */
+.shopify-pc__prefs__overlay,
 .shopify-pc__overlay {
   background: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
   z-index: 2147483646 !important;
+  touch-action: none !important;
 }
