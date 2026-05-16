@@ -224,18 +224,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .overflow-hidden {
-  overflow: hidden !important;
-}
-
-body.overflow-hidden {
-  height: 100vh !important;
-  height: 100dvh !important;
-  position: relative;
-}
-
-/* Ensure html is locked when body is locked */
-html:has(body.overflow-hidden) {
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 .skip-to-content-link:focus {
@@ -2953,21 +2942,18 @@ details-disclosure > details {
 .overflow-hidden-mobile,
 .overflow-hidden-tablet,
 .overflow-hidden-desktop {
-  overflow: hidden !important;
-  height: 100dvh !important;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 750px) {
   .overflow-hidden-mobile {
-    overflow: auto !important;
-    height: auto !important;
+    overflow: auto;
   }
 }
 
 @media screen and (min-width: 990px) {
   .overflow-hidden-tablet {
-    overflow: auto !important;
-    height: auto !important;
+    overflow: auto;
   }
 }
 
@@ -3755,24 +3741,6 @@ details-disclosure > details {
 }
 
 /* --- Shopify Privacy Banner (Liquid Glass Style) --- */
-
-/* Lock scroll when Privacy Center prefs is open */
-html:has(#shopify-pc__prefs:not([style*="none"])) {
-  overflow: hidden !important;
-  overscroll-behavior: none !important;
-}
-
-body:has(#shopify-pc__prefs:not([style*="none"])) {
-  overflow: hidden !important;
-  position: relative;
-  touch-action: none;
-  overscroll-behavior: none !important;
-}
-
-#shopify-pc__prefs:not([style*="none"]) {
-  touch-action: none !important;
-}
-
 #shopify-pc__banner {
   bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px)) !important;
   left: 50% !important;
