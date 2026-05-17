@@ -29,7 +29,7 @@
           placeholder=" "
           required
         >
-        <label for="AgeVerificationDate" class="field__label">Date of birth</label>
+        <label for="AgeVerificationDate" class="field__label">{{ section.settings.date_of_birth_label | escape }}</label>
       </div>
 
       <div id="AgeVerificationError" class="age-verification-modal__error hidden">
@@ -78,6 +78,12 @@
       "id": "min_age",
       "label": "Minimum Age",
       "default": 18
+    },
+    {
+      "type": "text",
+      "id": "date_of_birth_label",
+      "label": "Date of Birth Label",
+      "default": "Date of birth"
     },
     {
       "type": "text",
