@@ -55,3 +55,4 @@
   },
   "lessons_learned": "This project demonstrated the superior stability and speed of native browser Web APIs over large third-party JavaScript libraries. Utilizing capture-phase event listeners proved to be an incredibly powerful way to intercept, validate, and enrich core ecommerce flows without modifying vendor theme code. Additionally, constructing the 'Liquid Glass' design system reinforced the need for hardware-accelerated CSS properties to render heavy effects (like backdrop-filter blurs) smoothly on mobile browsers, showing that luxury design can co-exist with excellent performance."
 }
+
